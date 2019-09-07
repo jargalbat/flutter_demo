@@ -32,27 +32,26 @@ class _TweenAnimationScrState extends State<TweenAnimationScr>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text("Tween animation")),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text('duration: ${animateDuration.inSeconds}'),
-            Text(' height: ${animation.value.round()}'),
-            Container(
-              height: maxHeight,
-              child: Center(
-                child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 10),
-                  height: animation.value,
-                  width: animation.value,
-                  child: FlutterLogo(),
-                ),
+    return Scaffold(
+      appBar: AppBar(title: Text("Tween animation")),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text('Animate duration: ${animateDuration.inSeconds}'),
+          Text('Animation value: ${animation.value.round()}'),
+          Text('Logo height: ${animation.value.round()}'),
+          Container(
+            height: maxHeight,
+            child: Center(
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                height: animation.value,
+                width: animation.value,
+                child: FlutterLogo(),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
